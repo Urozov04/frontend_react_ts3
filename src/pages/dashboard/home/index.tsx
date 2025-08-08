@@ -1,26 +1,49 @@
-import React from 'react'
-import { FaHome } from 'react-icons/fa';
-import { NavLink, Outlet } from 'react-router-dom';
+import React from "react";
+import { NavLink, Outlet } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="text-blue-700">
-      <FaHome className="text-red-700" />
-      <p>Home</p>
-      <div>
-        <NavLink end={true} to={""}>
-          Football
+    <div>
+      <h2 className="text-2xl font-semibold mb-4">Home</h2>
+      <div className="flex gap-5 py-5">
+        <NavLink
+          end
+          to={""}
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-500 underline"
+              : "text-gray-600 hover:text-gray-800"
+          }
+        >
+          Family
         </NavLink>
-        <NavLink to={"box"}>
-          Box
+        <NavLink
+          to={"google"}
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-500 underline"
+              : "text-gray-600 hover:text-gray-800"
+          }
+        >
+          Google
         </NavLink>
-        <NavLink to={"movie"}>
-          Movie
+        <NavLink
+          to={"member"}
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-500 underline"
+              : "text-gray-600 hover:text-gray-800"
+          }
+        >
+          Member
         </NavLink>
       </div>
-      <Outlet/>
+
+      <div className="flex justify-center items-center min-h-[300px]">
+        <Outlet />
+      </div>
     </div>
   );
-}
+};
 
-export default React.memo(Home)
+export default React.memo(Home);

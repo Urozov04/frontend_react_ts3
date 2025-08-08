@@ -4,7 +4,11 @@ import { useRoutes } from 'react-router-dom'
 
 const Dashboard = lazy(() => import ('./dashboard'));
 
-const Home = lazy(() => import ('./dashboard/home'));
+const Home = lazy(() => import ('./dashboard/home'))
+const HomeFootball = lazy(() => import ("./dashboard/home/football"))
+const HomeBox = lazy(() => import ("./dashboard/home/box"))
+const HomeMovie = lazy(() => import ("./dashboard/home/movie"))
+
 
 const Shorts = lazy (() => import ("./dashboard/shorts"))
 const Football = lazy(() => import("./dashboard/shorts/football"));
@@ -71,7 +75,13 @@ const MainRouters = () => {
           path: "/",
           element: <Dashboard />,
           children: [
-            { index: true, element: <Home /> },
+            { path: "", element: <Home />,
+              children: [
+                {index: true, element: <HomeFootball/>},
+                {path: "box", element: <HomeBox/>},
+                {path: "movie", element: <HomeMovie/>},
+              ]
+             },
             {
               path: "shorts",
               element: <Shorts />,
