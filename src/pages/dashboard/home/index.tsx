@@ -15,27 +15,27 @@ const Home = () => {
               : "text-gray-600 hover:text-gray-800"
           }
         >
-          Family
+          Football
         </NavLink>
         <NavLink
-          to={"google"}
+          to={"box"}
           className={({ isActive }) =>
             isActive
               ? "text-blue-500 underline"
               : "text-gray-600 hover:text-gray-800"
           }
         >
-          Google
+          Box
         </NavLink>
         <NavLink
-          to={"member"}
+          to={"movie"}
           className={({ isActive }) =>
             isActive
               ? "text-blue-500 underline"
               : "text-gray-600 hover:text-gray-800"
           }
         >
-          Member
+          Movie
         </NavLink>
       </div>
 
